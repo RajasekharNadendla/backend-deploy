@@ -10,6 +10,9 @@ pipeline{
     environment{
         def appVersion = ''
         nexusUrl= 'nexus.rajasekhar.store:8081'
+        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        AWS_DEFAULT_REGION    = 'us-east-1'
     }
     parameters {
         string(name: 'appVersion', defaultValue: '1.0.0', description: 'What is App version?')
